@@ -3,6 +3,7 @@ package docxjavamapper.model;
 import docxjavamapper.model.properties.Color;
 import docxjavamapper.model.properties.adapter.BoldAdapter;
 import docxjavamapper.model.properties.adapter.ItalicAdapter;
+import docxjavamapper.model.properties.adapter.StrikeAdapter;
 import docxjavamapper.model.properties.adapter.UnderlineAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -55,6 +56,11 @@ public class DJMRunProperties {
     @Getter(AccessLevel.NONE)
     Boolean isUnderline = false;
 
+    @XmlElement(name = "strike")
+    @XmlJavaTypeAdapter(StrikeAdapter.class)
+    @Getter(AccessLevel.NONE)
+    Boolean isStrike = false;
+
     public Boolean isBold() {
         return isBold;
     }
@@ -65,6 +71,10 @@ public class DJMRunProperties {
 
     public Boolean isUnderline() {
         return isUnderline;
+    }
+
+    public Boolean isStrike() {
+        return isStrike;
     }
 
 }
