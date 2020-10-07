@@ -17,6 +17,6 @@ public class DJMBody {
     @XmlElement(name = "p")
     private List<DJMParagraph> paragraphs;
     @XmlElement(name = "tbl")
-
     private List<DJMTable> tables;
+
 }

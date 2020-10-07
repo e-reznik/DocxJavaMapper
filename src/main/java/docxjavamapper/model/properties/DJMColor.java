@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Color {
+public class DJMColor {
 
     @XmlAttribute(name="val", namespace = "http://schemas.openxmlformats.org/wordprocessingml/2006/main")
     private String value;
