@@ -1,6 +1,9 @@
 package docxjavamapper.model;
 
-import docxjavamapper.model.properties.Color;
+import docxjavamapper.model.properties.DJMColor;
+import docxjavamapper.model.properties.DJMFont;
+import docxjavamapper.model.properties.FontSize;
+import docxjavamapper.model.properties.Highlight;
 import docxjavamapper.model.properties.adapter.BoldAdapter;
 import docxjavamapper.model.properties.adapter.ItalicAdapter;
 import docxjavamapper.model.properties.adapter.StrikeAdapter;
@@ -16,8 +19,9 @@ import lombok.Getter;
 /**
  * rPr (Run Properties)
  *
- * This element specifies a set of run properties which shall be applied to the contents of the parent run after all
- * style formatting has been applied to the text. These properties are defined as direct formatting, since they are
+ * This element specifies a set of run properties which shall be applied to the
+ * contents of the parent run after all style formatting has been applied to the
+ * text. These properties are defined as direct formatting, since they are
  * directly applied to the run and supersede any formatting from styles.
  *
  * This formatting is applied at the following location in the style hierarchy:
@@ -39,7 +43,16 @@ import lombok.Getter;
 public class DJMRunProperties {
 
     @XmlElement
-    Color color;
+    DJMColor color;
+
+    @XmlElement
+    Highlight highlight;
+
+    @XmlElement(name = "rFonts")
+    DJMFont font;
+
+    @XmlElement(name = "sz")
+    FontSize fontSize;
 
     @XmlElement(name = "b")
     @XmlJavaTypeAdapter(BoldAdapter.class)
