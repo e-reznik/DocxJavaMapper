@@ -26,7 +26,7 @@ import lombok.Data;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class DJMParagraph {
 
-    @XmlElement(name = "P")
+    @XmlElement(name = "pPr")
     private DJMParagraphProperties paragraphProperties;
     @XmlElement(name = "r")
     private List<DJMRun> runs;

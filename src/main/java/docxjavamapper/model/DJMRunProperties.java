@@ -43,36 +43,36 @@ import lombok.Getter;
 public class DJMRunProperties {
 
     @XmlElement
-    DJMColor color;
+    private DJMColor color;
 
     @XmlElement
-    Highlight highlight;
+    private Highlight highlight;
 
     @XmlElement(name = "rFonts")
-    DJMFont font;
+    private DJMFont font;
 
     @XmlElement(name = "sz")
-    FontSize fontSize;
+    private FontSize fontSize;
 
     @XmlElement(name = "b")
     @XmlJavaTypeAdapter(BoldAdapter.class)
     @Getter(AccessLevel.NONE)
-    Boolean isBold = false;
+    private Boolean isBold = false;
 
     @XmlElement(name = "i")
     @XmlJavaTypeAdapter(ItalicAdapter.class)
     @Getter(AccessLevel.NONE)
-    Boolean isItalic = false;
+    private Boolean isItalic = false;
 
     @XmlElement(name = "u")
     @XmlJavaTypeAdapter(UnderlineAdapter.class)
     @Getter(AccessLevel.NONE)
-    Boolean isUnderline = false;
+    private Boolean isUnderline = false;
 
     @XmlElement(name = "strike")
     @XmlJavaTypeAdapter(StrikeAdapter.class)
     @Getter(AccessLevel.NONE)
-    Boolean isStrike = false;
+    private Boolean isStrike = false;
 
     public Boolean isBold() {
         return isBold;
@@ -89,5 +89,4 @@ public class DJMRunProperties {
     public Boolean isStrike() {
         return isStrike;
     }
-
 }
