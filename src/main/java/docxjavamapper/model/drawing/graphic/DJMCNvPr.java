@@ -3,13 +3,16 @@ package docxjavamapper.model.drawing.graphic;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import lombok.Data;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.experimental.FieldDefaults;
 
-@Data
+@Getter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @XmlAccessorType(XmlAccessType.FIELD)
 public class DJMCNvPr {
 
     @XmlAttribute
-    private String name;
+    String name;
 
 }

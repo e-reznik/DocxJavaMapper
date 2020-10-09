@@ -4,7 +4,9 @@ import docxjavamapper.model.drawing.graphic.DJMDrawing;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import lombok.Data;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.experimental.FieldDefaults;
 
 /**
  * r (Text Run)
@@ -15,15 +17,16 @@ import lombok.Data;
  * The contents of a run in a WordprocessingML document shall consist of any
  * combination of run content.
  */
-@Data
+@Getter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @XmlAccessorType(XmlAccessType.FIELD)
 public class DJMRun {
 
     @XmlElement(name = "rPr")
-    private DJMRunProperties runProperties;
+    DJMRunProperties runProperties;
     @XmlElement(name = "t")
-    private String text;
+    String text;
     @XmlElement(name = "drawing")
-    private DJMDrawing drawing;
+    DJMDrawing drawing;
 
 }

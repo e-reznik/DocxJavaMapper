@@ -4,7 +4,9 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import lombok.Data;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.experimental.FieldDefaults;
 
 /**
  * document (Document)
@@ -13,12 +15,13 @@ import lombok.Data;
  * WordprocessingML document.
  *
  */
-@Data
+@Getter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @XmlRootElement(name = "document")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class DJMDocument {
 
     @XmlElement(name = "body")
-    private DJMBody body;
+    DJMBody body;
 
 }

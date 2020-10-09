@@ -13,8 +13,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import lombok.AccessLevel;
-import lombok.Data;
 import lombok.Getter;
+import lombok.experimental.FieldDefaults;
 
 /**
  * rPr (Run Properties)
@@ -38,41 +38,35 @@ import lombok.Getter;
  *
  * Direct formatting (this element)
  */
-@Data
+@Getter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @XmlAccessorType(XmlAccessType.FIELD)
 public class DJMRunProperties {
 
     @XmlElement
-    private DJMColor color;
-
+    DJMColor color;
     @XmlElement
-    private Highlight highlight;
-
+    Highlight highlight;
     @XmlElement(name = "rFonts")
-    private DJMFont font;
-
+    DJMFont font;
     @XmlElement(name = "sz")
-    private FontSize fontSize;
-
+    FontSize fontSize;
     @XmlElement(name = "b")
     @XmlJavaTypeAdapter(BoldAdapter.class)
     @Getter(AccessLevel.NONE)
-    private Boolean isBold = false;
-
+    Boolean isBold = false;
     @XmlElement(name = "i")
     @XmlJavaTypeAdapter(ItalicAdapter.class)
     @Getter(AccessLevel.NONE)
-    private Boolean isItalic = false;
-
+    Boolean isItalic = false;
     @XmlElement(name = "u")
     @XmlJavaTypeAdapter(UnderlineAdapter.class)
     @Getter(AccessLevel.NONE)
-    private Boolean isUnderline = false;
-
+    Boolean isUnderline = false;
     @XmlElement(name = "strike")
     @XmlJavaTypeAdapter(StrikeAdapter.class)
     @Getter(AccessLevel.NONE)
-    private Boolean isStrike = false;
+    Boolean isStrike = false;
 
     public Boolean isBold() {
         return isBold;
