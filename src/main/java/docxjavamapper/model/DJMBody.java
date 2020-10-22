@@ -1,25 +1,31 @@
 package docxjavamapper.model;
 
+import docxjavamapper.model.interfaces.BodyElement;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElements;
 import lombok.AccessLevel;
-import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 
 /**
  * The container for the block level structures such as paragraphs, tables,
  * annotations, and others specified in the ISO/IEC 29500 specification.
  */
-@Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@XmlAccessorType(XmlAccessType.FIELD)
 public class DJMBody {
 
-    @XmlElement(name = "p")
-    private List<DJMParagraph> paragraphs;
-    @XmlElement(name = "tbl")
-    private List<DJMTable> tables;
+    List<BodyElement> bodyElements;
 
+    @XmlElements({
+        @XmlElement(name = "p", type = DJMParagraph.class),
+        @XmlElement(name = "tbl", type = DJMTable.class)
+    })
+
+    public List<BodyElement> getBodyElements() {
+        return bodyElements;
+    }
+
+    private void setBodyElements(List<BodyElement> bodyElements) {
+        this.bodyElements = bodyElements;
+    }
 }

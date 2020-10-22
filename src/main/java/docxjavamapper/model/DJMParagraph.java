@@ -1,10 +1,13 @@
 package docxjavamapper.model;
 
+import docxjavamapper.model.interfaces.BodyElement;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import lombok.Data;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.experimental.FieldDefaults;
 
 /**
  * p (Paragraph)
@@ -22,13 +25,16 @@ import lombok.Data;
  *
  * Run level content (fields, hyperlinks, runs)
  */
-@Data
+@Getter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @XmlAccessorType(XmlAccessType.FIELD)
-public class DJMParagraph {
+public class DJMParagraph extends BodyElement {
 
     @XmlElement(name = "pPr")
-    private DJMParagraphProperties paragraphProperties;
+    DJMParagraphProperties paragraphProperties;
     @XmlElement(name = "r")
-    private List<DJMRun> runs;
+    List<DJMRun> runs;
+//    @XmlElement(name = "hyperlink")
+//    DJMHyperlink hyperlink;
 
 }
