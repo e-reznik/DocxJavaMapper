@@ -1,5 +1,5 @@
 package docxjavamapper.model.interfaces;
 
-public class BodyElement {
+public interface iBodyElement {
 
 }

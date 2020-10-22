@@ -1,6 +1,6 @@
 package docxjavamapper.model;
 
-import docxjavamapper.model.interfaces.BodyElement;
+import docxjavamapper.model.interfaces.iBodyElement;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
@@ -14,18 +14,18 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class DJMBody {
 
-    List<BodyElement> bodyElements;
+    List<iBodyElement> bodyElements;
 
     @XmlElements({
         @XmlElement(name = "p", type = DJMParagraph.class),
         @XmlElement(name = "tbl", type = DJMTable.class)
     })
 
-    public List<BodyElement> getBodyElements() {
+    public List<iBodyElement> getBodyElements() {
         return bodyElements;
     }
 
-    private void setBodyElements(List<BodyElement> bodyElements) {
+    private void setBodyElements(List<iBodyElement> bodyElements) {
         this.bodyElements = bodyElements;
     }
 }

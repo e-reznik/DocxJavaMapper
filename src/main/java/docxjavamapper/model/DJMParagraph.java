@@ -1,6 +1,6 @@
 package docxjavamapper.model;
 
-import docxjavamapper.model.interfaces.BodyElement;
+import docxjavamapper.model.interfaces.iBodyElement;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -28,7 +28,7 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @XmlAccessorType(XmlAccessType.FIELD)
-public class DJMParagraph extends BodyElement {
+public class DJMParagraph implements iBodyElement {
 
     @XmlElement(name = "pPr")
     DJMParagraphProperties paragraphProperties;
