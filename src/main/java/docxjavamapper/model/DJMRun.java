@@ -1,6 +1,7 @@
 package docxjavamapper.model;
 
 import docxjavamapper.model.drawing.graphic.DJMDrawing;
+import docxjavamapper.model.interfaces.iParagraphElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -20,7 +21,7 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @XmlAccessorType(XmlAccessType.FIELD)
-public class DJMRun {
+public class DJMRun implements iParagraphElement {
 
     @XmlElement(name = "rPr")
     DJMRunProperties runProperties;

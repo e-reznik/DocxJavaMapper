@@ -1,10 +1,13 @@
 package docxjavamapper.model;
 
+import docxjavamapper.model.interfaces.iParagraphElement;
 import docxjavamapper.model.paragraphProperties.DJMAlignment;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import lombok.Data;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.experimental.FieldDefaults;
 
 /**
  * pPr (Paragraph Properties)
@@ -16,11 +19,14 @@ import lombok.Data;
  * supersede any formatting from styles.
  *
  */
-@Data
+@Getter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @XmlAccessorType(XmlAccessType.FIELD)
-public class DJMParagraphProperties {
+public class DJMParagraphProperties implements iParagraphElement {
 
     @XmlElement(name = "jc")
-    private DJMAlignment alignment;
+    DJMAlignment alignment;
+    @XmlElement(name = "numPr")
+    DJMNumberingProperties numberingProperties;
 
 }

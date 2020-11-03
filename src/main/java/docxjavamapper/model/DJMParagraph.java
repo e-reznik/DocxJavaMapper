@@ -1,12 +1,11 @@
 package docxjavamapper.model;
 
 import docxjavamapper.model.interfaces.iBodyElement;
+import docxjavamapper.model.interfaces.iParagraphElement;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElements;
 import lombok.AccessLevel;
-import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 
 /**
@@ -25,16 +24,23 @@ import lombok.experimental.FieldDefaults;
  *
  * Run level content (fields, hyperlinks, runs)
  */
-@Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@XmlAccessorType(XmlAccessType.FIELD)
-public class DJMParagraph implements iBodyElement {
+public class DJMParagraph implements iBodyElement{
 
-    @XmlElement(name = "pPr")
-    DJMParagraphProperties paragraphProperties;
-    @XmlElement(name = "r")
-    List<DJMRun> runs;
-//    @XmlElement(name = "hyperlink")
-//    DJMHyperlink hyperlink;
+    List<iParagraphElement> paragraphElements;
+
+    @XmlElements({
+        @XmlElement(name = "pPr", type = DJMParagraphProperties.class),
+        @XmlElement(name = "r", type = DJMRun.class),
+        @XmlElement(name = "hyperlink", type = DJMHyperlink.class)
+    })
+
+    public List<iParagraphElement> getParagraphElements() {
+        return paragraphElements;
+    }
+
+    private void setParagraphElements(List<iParagraphElement> paragraphElements) {
+        this.paragraphElements = paragraphElements;
+    }
 
 }
