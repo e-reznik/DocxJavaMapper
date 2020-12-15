@@ -17,8 +17,8 @@ import lombok.experimental.FieldDefaults;
 public class DJMRelationship {
 
     @XmlAttribute(name = "Id")
-    String Id;
+    String id;
     @XmlAttribute(name = "Target")
-    String Target;
+    String target;
 
 }

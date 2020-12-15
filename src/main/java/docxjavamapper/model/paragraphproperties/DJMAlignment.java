@@ -1,4 +1,4 @@
-package docxjavamapper.model.paragraphProperties;
+package docxjavamapper.model.paragraphproperties;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

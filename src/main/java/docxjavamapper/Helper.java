@@ -7,6 +7,9 @@ import java.util.zip.ZipFile;
 
 public class Helper {
 
+    private Helper() {
+    }
+
     /**
      * Returns the stream to a document.xml from the DOCX-archive.
      *
@@ -15,12 +18,8 @@ public class Helper {
      * @throws IOException
      */
     public static InputStream getDocument(File docx) throws IOException {
-        ZipFile zipFile = new ZipFile(docx);
-        InputStream is = zipFile.getInputStream(zipFile.getEntry("word/document.xml"));
-
-        return is;
+        try (ZipFile zipFile = new ZipFile(docx)) {
+            return zipFile.getInputStream(zipFile.getEntry("word/document.xml"));
+        }
     }
-
-
-
 }

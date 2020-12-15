@@ -10,7 +10,7 @@ public class Main {
         DocxJM mapper = new DocxJM();
 
         try {
-            mapper.map("/home/docs/sample.docx");
+            mapper.map("/home/evgenij/docs/sample.docx");
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
