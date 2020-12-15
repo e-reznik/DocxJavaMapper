@@ -4,15 +4,14 @@ import docxjavamapper.model.DJMDocument;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
+import org.apache.logging.log4j.LogManager;
 
 public class DocxJM {
 
-    private static final Logger LOGGER = LogManager.getLogger(DocxJM.class);
+    private static final org.apache.logging.log4j.Logger LOGGER = LogManager.getLogger(DocxJM.class);
 
     /**
      * Maps a given Docx to a Pojo and returns it.
@@ -62,5 +61,4 @@ public class DocxJM {
         }
         return document;
     }
-
 }
