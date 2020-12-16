@@ -8,10 +8,11 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class DocxJM {
 
-    private static final org.apache.logging.log4j.Logger LOGGER = LogManager.getLogger(DocxJM.class);
+    private static final Logger LOGGER = LogManager.getLogger(DocxJM.class);
 
     /**
      * Maps a given Docx to a Pojo and returns it.

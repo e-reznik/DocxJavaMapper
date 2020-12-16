@@ -1,6 +1,5 @@
 package docxjavamapper.model;
 
-import docxjavamapper.model.interfaces.ParagraphElement;
 import docxjavamapper.model.paragraphproperties.DJMAlignment;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
