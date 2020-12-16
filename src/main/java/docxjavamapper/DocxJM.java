@@ -1,28 +1,22 @@
 package docxjavamapper;
 
-import com.fasterxml.jackson.databind.util.Converter;
 import docxjavamapper.model.DJMDocument;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class DocxJM {
 
-    private final static Logger LOGGER = Logger.getLogger(Converter.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(DocxJM.class);
 
     public DocxJM() {
     }
 
-//    public static void main(String[] args) throws IOException {
-//        DocxMapper mapper = new DocxMapper();
-//        Document doc = mapper.map("ad");
-//        System.out.println("stop");
-//    }
     /**
      * Maps a given Docx to a Pojo and returns it.
      *
@@ -42,7 +36,7 @@ public class DocxJM {
 
             System.out.println("stop");
         } catch (JAXBException ex) {
-            Logger.getLogger(DocxJM.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error(ex);
         }
 
         return document;
@@ -72,7 +66,7 @@ public class DocxJM {
 
             System.out.println("stop");
         } catch (JAXBException ex) {
-            Logger.getLogger(DocxJM.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error(ex);
         }
 
         return document;
