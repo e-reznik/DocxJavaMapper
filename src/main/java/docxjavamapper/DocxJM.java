@@ -33,8 +33,6 @@ public class DocxJM {
             jaxbContext = JAXBContext.newInstance(DJMDocument.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             document = (DJMDocument) jaxbUnmarshaller.unmarshal(is);
-
-            System.out.println("stop");
         } catch (JAXBException ex) {
             LOGGER.error(ex);
         }
@@ -63,8 +61,6 @@ public class DocxJM {
             jaxbContext = JAXBContext.newInstance(DJMDocument.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             document = (DJMDocument) jaxbUnmarshaller.unmarshal(is);
-
-            System.out.println("stop");
         } catch (JAXBException ex) {
             LOGGER.error(ex);
         }

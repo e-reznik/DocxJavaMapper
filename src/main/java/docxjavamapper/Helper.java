@@ -16,11 +16,7 @@ public class Helper {
      */
     public static InputStream getDocument(File docx) throws IOException {
         ZipFile zipFile = new ZipFile(docx);
-        InputStream is = zipFile.getInputStream(zipFile.getEntry("word/document.xml"));
-
-        return is;
+        return zipFile.getInputStream(zipFile.getEntry("word/document.xml"));
     }
-
-
 
 }
