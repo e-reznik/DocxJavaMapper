@@ -1,15 +1,15 @@
 package docxjavamapper.model;
 
-import docxjavamapper.model.interfaces.iParagraphElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
+import docxjavamapper.model.interfaces.ParagraphElement;
 
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class DJMHyperlink implements iParagraphElement {
+public class DJMHyperlink implements ParagraphElement {
 
     @XmlElement(name = "r")
     DJMRun run;

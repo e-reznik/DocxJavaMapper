@@ -1,12 +1,12 @@
 package docxjavamapper.model;
 
-import docxjavamapper.model.interfaces.iBodyElement;
-import docxjavamapper.model.interfaces.iParagraphElement;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
+import docxjavamapper.model.interfaces.BodyElement;
+import docxjavamapper.model.interfaces.ParagraphElement;
 
 /**
  * p (Paragraph)
@@ -25,9 +25,9 @@ import lombok.experimental.FieldDefaults;
  * Run level content (fields, hyperlinks, runs)
  */
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class DJMParagraph implements iBodyElement{
+public class DJMParagraph implements BodyElement{
 
-    List<iParagraphElement> paragraphElements;
+    List<ParagraphElement> paragraphElements;
 
     @XmlElements({
         @XmlElement(name = "pPr", type = DJMParagraphProperties.class),
@@ -35,11 +35,11 @@ public class DJMParagraph implements iBodyElement{
         @XmlElement(name = "hyperlink", type = DJMHyperlink.class)
     })
 
-    public List<iParagraphElement> getParagraphElements() {
+    public List<ParagraphElement> getParagraphElements() {
         return paragraphElements;
     }
 
-    private void setParagraphElements(List<iParagraphElement> paragraphElements) {
+    private void setParagraphElements(List<ParagraphElement> paragraphElements) {
         this.paragraphElements = paragraphElements;
     }
 

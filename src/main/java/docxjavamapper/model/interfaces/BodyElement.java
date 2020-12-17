@@ -1,5 +1,5 @@
 package docxjavamapper.model.interfaces;
 
-public interface iParagraphElement {
+public interface BodyElement {
 
 }

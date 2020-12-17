@@ -1,11 +1,11 @@
 package docxjavamapper.model;
 
-import docxjavamapper.model.interfaces.iBodyElement;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
+import docxjavamapper.model.interfaces.BodyElement;
 
 /**
  * The container for the block level structures such as paragraphs, tables,
@@ -14,18 +14,18 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class DJMBody {
 
-    List<iBodyElement> bodyElements;
+    List<BodyElement> bodyElements;
 
     @XmlElements({
         @XmlElement(name = "p", type = DJMParagraph.class),
         @XmlElement(name = "tbl", type = DJMTable.class)
     })
 
-    public List<iBodyElement> getBodyElements() {
+    public List<BodyElement> getBodyElements() {
         return bodyElements;
     }
 
-    private void setBodyElements(List<iBodyElement> bodyElements) {
+    private void setBodyElements(List<BodyElement> bodyElements) {
         this.bodyElements = bodyElements;
     }
 }
