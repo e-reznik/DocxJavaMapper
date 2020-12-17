@@ -14,9 +14,6 @@ public class DocxJM {
 
     private static final Logger LOGGER = LogManager.getLogger(DocxJM.class);
 
-    public DocxJM() {
-    }
-
     /**
      * Maps a given Docx to a Pojo and returns it.
      *
@@ -52,19 +49,18 @@ public class DocxJM {
         if (!file.exists()) {
             throw new IOException("File doesn't exist: " + file);
         }
-
-        InputStream is = Helper.getDocument(new File(str));
         DJMDocument document = null;
 
-        JAXBContext jaxbContext;
-        try {
-            jaxbContext = JAXBContext.newInstance(DJMDocument.class);
-            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            document = (DJMDocument) jaxbUnmarshaller.unmarshal(is);
-        } catch (JAXBException ex) {
-            LOGGER.error(ex);
+        try (InputStream is = Helper.getDocument(new File(str))) {
+            JAXBContext jaxbContext;
+            try {
+                jaxbContext = JAXBContext.newInstance(DJMDocument.class);
+                Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+                document = (DJMDocument) jaxbUnmarshaller.unmarshal(is);
+            } catch (JAXBException ex) {
+                LOGGER.error(ex);
+            }
         }
-
         return document;
     }
 

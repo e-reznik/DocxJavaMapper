@@ -7,6 +7,9 @@ import java.util.zip.ZipFile;
 
 public class Helper {
 
+    private Helper() {
+    }
+
     /**
      * Returns the stream to a document.xml from the DOCX-archive.
      *
