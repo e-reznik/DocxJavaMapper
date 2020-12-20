@@ -1,11 +1,11 @@
 package docxjavamapper.model;
 
+import docxjavamapper.model.interfaces.BodyElement;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElements;
 import java.util.List;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElements;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
-import docxjavamapper.model.interfaces.BodyElement;
 
 /**
  * The container for the block level structures such as paragraphs, tables,

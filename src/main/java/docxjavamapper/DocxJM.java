@@ -1,18 +1,19 @@
 package docxjavamapper;
 
 import docxjavamapper.model.DJMDocument;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Unmarshaller;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class DocxJM {
 
     private static final Logger LOGGER = LogManager.getLogger(DocxJM.class);
+    private static JAXBContext jaxbContext;
 
     /**
      * Maps a given Docx to a Pojo and returns it.
@@ -25,13 +26,12 @@ public class DocxJM {
 
         DJMDocument document = null;
 
-        JAXBContext jaxbContext;
         try {
             jaxbContext = JAXBContext.newInstance(DJMDocument.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             document = (DJMDocument) jaxbUnmarshaller.unmarshal(is);
         } catch (JAXBException ex) {
-            LOGGER.error(ex);
+            LOGGER.error("JAXBException: {0}", ex);
         }
 
         return document;
@@ -52,13 +52,12 @@ public class DocxJM {
         DJMDocument document = null;
 
         try (InputStream is = Helper.getDocument(new File(str))) {
-            JAXBContext jaxbContext;
             try {
                 jaxbContext = JAXBContext.newInstance(DJMDocument.class);
                 Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
                 document = (DJMDocument) jaxbUnmarshaller.unmarshal(is);
             } catch (JAXBException ex) {
-                LOGGER.error(ex);
+                LOGGER.error("JAXBException: {0}", ex);
             }
         }
         return document;

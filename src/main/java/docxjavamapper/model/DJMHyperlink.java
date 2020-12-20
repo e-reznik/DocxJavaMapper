@@ -1,11 +1,11 @@
 package docxjavamapper.model;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
+import docxjavamapper.model.interfaces.ParagraphElement;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
-import docxjavamapper.model.interfaces.ParagraphElement;
 
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)

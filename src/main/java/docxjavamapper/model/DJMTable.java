@@ -1,14 +1,14 @@
 package docxjavamapper.model;
 
+import docxjavamapper.model.interfaces.BodyElement;
 import docxjavamapper.model.table.DJMTableRow;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
-import docxjavamapper.model.interfaces.BodyElement;
 
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)

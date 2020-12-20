@@ -1,12 +1,12 @@
 package docxjavamapper.model;
 
-import java.util.List;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElements;
-import lombok.AccessLevel;
-import lombok.experimental.FieldDefaults;
 import docxjavamapper.model.interfaces.BodyElement;
 import docxjavamapper.model.interfaces.ParagraphElement;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElements;
+import java.util.List;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 
 /**
  * p (Paragraph)

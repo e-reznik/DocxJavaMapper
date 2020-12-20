@@ -1,7 +1,7 @@
 package docxjavamapper.model.properties.adapter;
 
 import docxjavamapper.model.properties.Italic;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
 public class ItalicAdapter extends XmlAdapter<Italic, Boolean> {
 
